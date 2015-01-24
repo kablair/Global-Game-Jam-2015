@@ -39,6 +39,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0918582c254a45342a173bbb711e3e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelRawDataFileName: TestLevel
+  WallMaterial: {fileID: 2100000, guid: e8acf13548591864fbb888e337d5855a, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
