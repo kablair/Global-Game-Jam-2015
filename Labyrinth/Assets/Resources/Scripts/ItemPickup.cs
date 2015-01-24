@@ -6,7 +6,7 @@ public class ItemPickup : MonoBehaviour
 {
 	enum Item
 	{
-		Item1, Rope
+		Item1, Rope, Apple
 
 
 	};
@@ -14,7 +14,9 @@ public class ItemPickup : MonoBehaviour
 	{
 		if(isItem (col.gameObject))
 			Destroy(col.gameObject);
-
+		else if (col.gameObject.name.Equals ("WallModel")) {
+			audio.PlayOneShot(this.audio.clip);
+		}
 	}
 
 	bool isItem(GameObject obj)
