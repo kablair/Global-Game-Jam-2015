@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour {
 	public string LevelRawDataFileName;
-	public Material WallMaterial;
 	public float CameraHeight;
 
 	Texture2D m_levelRawData;
