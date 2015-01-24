@@ -32,7 +32,7 @@ GameObject:
   - 50: {fileID: 5069762}
   - 114: {fileID: 11405004}
   m_Layer: 0
-  m_Name: PlayerObject
+  m_Name: PlayerModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ Rigidbody2D:
   m_CollisionDetection: 0
 --- !u!54 &5400000
 Rigidbody:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150218}
@@ -122,7 +122,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &6500000
 BoxCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150218}
