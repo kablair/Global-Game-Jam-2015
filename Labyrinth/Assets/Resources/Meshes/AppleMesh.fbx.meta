@@ -1,18 +1,25 @@
 fileFormatVersion: 2
-guid: be6d39983c6dc0f428fd4e0e07d31ea2
+guid: 8a65e151bc5a54743aef04e4f69b7cff
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
+    100002: apple1:Group1
+    100004: apple_leaf1:Group13037
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: rope:ZBrush_defualt_group
+    400002: apple1:Group1
+    400004: apple_leaf1:Group13037
+    2300000: apple1:Group1
+    2300002: apple_leaf1:Group13037
+    3300000: apple1:Group1
+    3300002: apple_leaf1:Group13037
+    4300000: apple1:Group1
+    4300002: apple_leaf1:Group13037
     9500000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
-    materialSearch: 1
+    materialSearch: 2
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
