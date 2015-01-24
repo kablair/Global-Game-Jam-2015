@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour {
 	void Start () {
 		SetupCamera();
 		SetupLevel();
+		SetupLight();
 	}
 
 	void SetupCamera() {
@@ -34,8 +35,17 @@ public class LevelManager : MonoBehaviour {
 			}
 		}
 
-		//GameObject floor = GameObject.Instantiate(cubePrefab) as GameObject;
-		//floor.transform.position = new Vector3(0, -1, 0);
-		//floor.transform.localScale = new Vector3(testLevel.width, 0.0f, testLevel.height);
+		GameObject floor = GameObject.Instantiate(cubePrefab) as GameObject;
+		floor.name = "Floor";
+		floor.transform.localScale = new Vector3(testLevel.width, 1.0f, testLevel.height);
+		floor.transform.position = new Vector3(testLevel.width / 2.0f - 0.5f, -1.0f, testLevel.height / 2.0f - 0.5f);
+	}
+
+	void SetupLight() {
+		//GameObject lightGameObject = new GameObject();
+		//lightGameObject.name = "Light";
+		//lightGameObject.transform.position = new Vector3(0.0f, 10.0f, 0.0f);
+		//lightGameObject.AddComponent(light);
+		//lightGameObject.light.type = LightType.Directional;
 	}
 }
