@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0918582c254a45342a173bbb711e3e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_levelRawDataFileName: TestLevel
 --- !u!4 &947383444
 Transform:
   m_ObjectHideFlags: 0
@@ -152,6 +153,10 @@ Prefab:
     - target: {fileID: 454382, guid: dd80fbeec930c3e47aa9e553f7cd3817, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454382, guid: dd80fbeec930c3e47aa9e553f7cd3817, type: 2}
+      propertyPath: m_levelRawDataFileName
+      value: TestLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd80fbeec930c3e47aa9e553f7cd3817, type: 2}

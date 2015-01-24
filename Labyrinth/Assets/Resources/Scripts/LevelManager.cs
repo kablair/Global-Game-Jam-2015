@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class LevelManager : MonoBehaviour {
+	public string m_levelRawDataFileName;
 	Texture2D m_levelRawData;
 
 	GameObject m_wallPrefab;
@@ -18,6 +19,8 @@ public class LevelManager : MonoBehaviour {
 	ArrayList m_wallLocations;
 	
 	void Start () {
+		if (m_levelRawDataFileName == "") return;
+
 		LoadPrefabs();
 		LevelDataPreProcess();
 		ProcessLevelData();
@@ -38,7 +41,7 @@ public class LevelManager : MonoBehaviour {
 		m_cameraPrefab = Resources.Load("Prefabs/Camera") as GameObject;
 	}
 	void LevelDataPreProcess() {
-		m_levelRawData = Resources.Load ("LevelData/level1") as Texture2D;
+		m_levelRawData = Resources.Load ("LevelData/" + m_levelRawDataFileName) as Texture2D;
 
 		m_level = new GameObject();
 		m_level.name = "Wall Container";
