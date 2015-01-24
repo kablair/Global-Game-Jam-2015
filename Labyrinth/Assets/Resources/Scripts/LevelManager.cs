@@ -15,20 +15,14 @@ public class LevelManager : MonoBehaviour {
 	GameObject m_playerPrefab;
 	GameObject m_cameraPrefab;
 	GameObject m_applePrefab;
-	GameObject m_itemPrefab;
-//	Vector3 m_appleStartPosition;
-//	GameObject m_apple;
+	//GameObject m_itemPrefab;
+	
 	GameObject m_player;
-	GameObject m_item1;
 	Vector3 m_playerStartPosition;
 
-	Vector3 m_item1StartPosition;
+//	Vector3 m_item1StartPosition;
 	GameObject m_level;
 	bool[,] m_wallLocations;
-
-	//bool[,] m_wallCorners;
-	//Mesh m_wallMesh;
-
 	
 	void Start () {
 		if (LevelRawDataFileName == "") return;
@@ -36,8 +30,8 @@ public class LevelManager : MonoBehaviour {
 		LoadPrefabs();
 		LevelDataPreProcess();
 		ProcessLevelData();
-		SetItemStartPosition (114, 20);
-		//InstantiateWallMesh();
+//		SetItemStartPosition (114, 20);
+
 		InstantiateWalls();
 		InstantiateFloor();
 
@@ -45,7 +39,6 @@ public class LevelManager : MonoBehaviour {
 
 		InstantiatePlayer();
 		InstantiateCamera();
-//		InstantiateApple();
 	}
 
 	void LoadPrefabs() {
@@ -54,8 +47,8 @@ public class LevelManager : MonoBehaviour {
 		m_lightsPrefab = Resources.Load("Prefabs/Lights") as GameObject;
 		m_playerPrefab = Resources.Load("Prefabs/Player") as GameObject;
 		m_cameraPrefab = Resources.Load("Prefabs/Camera") as GameObject;
-//		m_applePrefab = Resources.Load ("Prefabs/Apple") as GameObject;
-		m_itemPrefab = Resources.Load("Prefabs/Item 1") as GameObject;
+		m_applePrefab = Resources.Load ("Prefabs/Apple") as GameObject;
+		//m_itemPrefab = Resources.Load("Prefabs/Item 1") as GameObject;
 	}
 	void LevelDataPreProcess() {
 		m_levelRawData = Resources.Load ("LevelData/" + LevelRawDataFileName) as Texture2D;
@@ -64,7 +57,6 @@ public class LevelManager : MonoBehaviour {
 		m_level.name = "Wall Container";
 
 		m_wallLocations = new bool[m_levelRawData.width,m_levelRawData.height];
-		//m_wallCorners = new bool[m_levelRawData.width + 1,m_levelRawData.height + 1];
 	}
 	void ProcessLevelData() {
 		for (int i = 0; i < m_levelRawData.width; i++) {
@@ -79,36 +71,34 @@ public class LevelManager : MonoBehaviour {
 				if (color == Color.green) {
 					SetPlayerPosition(i, j);
 				}
-//				else if (color == Color.red){
-//					SetApplePosition(i,j);}
+				else if (color == Color.red){
+					InstantiateApple(i,j);
+				}
 			}
 		}
 	}
-//	void SetApplePosition(int x, int z){
-//		m_appleStartPosition = new Vector3 (x, 0.0f, z);
-//	}
-//	void InstantiateApple(){
-//		m_apple = GameObject.Instantiate(m_applePrefab, m_appleStartPosition, new Quaternion ()) as GameObject;
-//		m_apple.name = "Apple";
-//	}
+	void InstantiateApple(int x, int z){
+		GameObject m_apple = GameObject.Instantiate(m_applePrefab, new Vector3 (x, 0.0f, z), new Quaternion ()) as GameObject;
+		m_apple.name = "Apple";
+	}
 
 	void SetPlayerPosition(int x, int z) {
 		m_playerStartPosition = new Vector3 (x, 1f, z);
 	}
 	
-	void SetItemStartPosition(int x, int z) {
-		m_item1StartPosition = new Vector3 (x, 1f, z);
-	}
+//	void SetItemStartPosition(int x, int z) {
+//		m_item1StartPosition = new Vector3 (x, 1f, z);
+//	}
 	void InstantiatePlayer() {
 		m_player = GameObject.Instantiate (m_playerPrefab, m_playerStartPosition, new Quaternion ()) as GameObject;
 		m_player.name = "Player";
 		m_player.tag = "Player";
 	}
-	void InstantiateItems() {
-		m_item1 = GameObject.Instantiate (m_itemPrefab, m_item1StartPosition, new Quaternion ()) as GameObject;
-		m_item1.name = "Item1";
-		//m_item1.tag = "Item1";
-	}
+//	void InstantiateItems() {
+//		m_item1 = GameObject.Instantiate (m_itemPrefab, m_item1StartPosition, new Quaternion ()) as GameObject;
+//		m_item1.name = "Item1";
+//		//m_item1.tag = "Item1";
+//	}
 
 	void InstantiateCamera() {
 		GameObject camera = GameObject.Instantiate(m_cameraPrefab) as GameObject;
@@ -120,56 +110,7 @@ public class LevelManager : MonoBehaviour {
 
 	void SetWallLocation(int x, int z, bool isWall) {
 		m_wallLocations[x, z] = isWall;
-
-		//m_wallCorners[x,z] = true;
-		//m_wallCorners[x+1,z+1] = true;
 	}
-	/*void InstantiateWallMesh() {
-		m_wallMesh = new Mesh();
-		m_wallMesh.name = "Prog Wall Mesh";
-
-		int offset = 0;
-		List<Vector3> vertices = new List<Vector3>();
-		List<Vector2> uv = new List<Vector2>();
-		List<int> triangles = new List<int>();
-
-		foreach (Vector3 wallLocation in m_wallLocations) {
-			vertices.Add(new Vector3(wallLocation.x - 0.5f, -0.5f, wallLocation.z - 0.5f));
-			vertices.Add(new Vector3(wallLocation.x + 0.5f, -0.5f, wallLocation.z - 0.5f));
-			vertices.Add(new Vector3(wallLocation.x - 0.5f, -0.5f, wallLocation.z + 0.5f));
-			vertices.Add(new Vector3(wallLocation.x + 0.5f, -0.5f, wallLocation.z + 0.5f));
-
-			uv.Add(new Vector2 (0, 0));
-			uv.Add(new Vector2 (1, 0));
-			uv.Add(new Vector2 (0, 1));
-			uv.Add(new Vector2 (1, 1));
-
-			triangles.Add(offset);
-			triangles.Add(offset+3);
-			triangles.Add(offset+1);
-			triangles.Add(offset);
-			triangles.Add(offset+2);
-			triangles.Add(offset+3);
-
-			offset += 4;
-		}
-
-		m_wallMesh.vertices = vertices.ToArray();
-		m_wallMesh.uv = uv.ToArray();
-		m_wallMesh.triangles = triangles.ToArray();
-		m_wallMesh.RecalculateNormals();
-
-		GameObject WallsObject = new GameObject();
-		WallsObject.name = "Prog Wall Object";
-		WallsObject.transform.position = new Vector3(0.0f, 0.5f, 0.0f);
-		WallsObject.AddComponent<MeshFilter>();
-		WallsObject.GetComponent<MeshFilter>().mesh = m_wallMesh;
-		WallsObject.AddComponent<MeshRenderer>();
-		WallsObject.GetComponent<MeshRenderer>().material = WallMaterial;
-		WallsObject.GetComponent<MeshRenderer>().castShadows = false;
-		WallsObject.GetComponent<MeshRenderer>().receiveShadows = false;
-		WallsObject.AddComponent<MeshCollider>();
-	}*/
 	void InstantiateWalls() {
 		int width = m_levelRawData.width;
 		int height = m_levelRawData.height;
