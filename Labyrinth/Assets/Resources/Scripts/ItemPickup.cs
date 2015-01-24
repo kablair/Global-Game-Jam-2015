@@ -4,12 +4,6 @@ using System.Collections;
 
 public class ItemPickup : MonoBehaviour
 {
-//	enum Item
-//	{
-//		Item1, Rope, Apple
-//
-//
-//	};
 	void OnCollisionEnter (Collision col)
 	{
 		if(isItem (col.gameObject))
@@ -22,16 +16,6 @@ public class ItemPickup : MonoBehaviour
 	bool isItem(GameObject obj)
 	{
 		if (obj.tag.Equals("Item")) return true;
-//		foreach (Item  item in ((Item[]) Item.GetValues(typeof(Item))))
-//		{
-//		        
-//			string s= item.ToString();
-//			if(s.Equals (obj.name))
-//			{
-//				return true;
-//			}
-//			
-//		}
 		return false;
 	}
 
