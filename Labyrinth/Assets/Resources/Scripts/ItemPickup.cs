@@ -5,8 +5,8 @@ public class ItemPickup : MonoBehaviour
 {
 	void OnCollisionEnter (Collision col)
 	{
-		if(col.gameObject.tag == "Item") {
+		if(col.gameObject.name=="Item1")
 			Destroy(col.gameObject);
-		}
+	
 	}
 }
