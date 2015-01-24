@@ -199,6 +199,6 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	void Update() {
-		Debug.Log(1/Time.deltaTime + " FPS");
+		//Debug.Log(1/Time.deltaTime + " FPS");
 	}
 }

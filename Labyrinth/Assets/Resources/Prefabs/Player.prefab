@@ -8,12 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 450218}
-<<<<<<< HEAD
   - 114: {fileID: 11445598}
   - 54: {fileID: 5466464}
-=======
-  - 54: {fileID: 5400000}
->>>>>>> origin/master
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -90,10 +86,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169360}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
---- !u!54 &5466464
-Rigidbody:
-=======
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -111,7 +103,6 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!65 &6500000
 BoxCollider:
->>>>>>> origin/master
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
