@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class LevelManager : MonoBehaviour {
@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour {
 		SetupCamera();
 		SetupLevel();
 		SetupLight();
+		SetupPlayer();
 	}
 
 	void SetupCamera() {
@@ -49,6 +50,10 @@ public class LevelManager : MonoBehaviour {
 		floor.transform.position = new Vector3(m_levelData.width / 2.0f - 0.5f, -1.0f, m_levelData.height / 2.0f - 0.5f);
 	}
 
+	void SetupPlayer(){
+		GameObject playerPrefab = Resources.Load("Prefabs/Player") as GameObject;
+		GameObject player = GameObject.Instantiate (playerPrefab, new Vector3 (0.0f, 0.0f, 0.0f), new Quaternion ()) as GameObject;
+	}
 	void SetupLight() {
 		//GameObject lightGameObject = new GameObject();
 		//lightGameObject.name = "Light";
