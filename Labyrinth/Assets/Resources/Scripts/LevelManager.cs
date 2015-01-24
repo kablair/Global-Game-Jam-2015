@@ -13,7 +13,6 @@ public class LevelManager : MonoBehaviour {
 
 		SetupLevel();
 		SetupLight();
-		SetupPlayer();
 		SetupCamera();
 	}
 	
@@ -30,6 +29,15 @@ public class LevelManager : MonoBehaviour {
 					GameObject wall = GameObject.Instantiate(wallPrefab, new Vector3(i, 0.0f, j), new Quaternion()) as GameObject;
 					wall.transform.parent = wallContainer.transform;
 					wall.name = "Wall";
+				} else if (color == Color.green) {
+					if (player != null) {
+						Destroy(player);
+					}
+
+					GameObject playerPrefab = Resources.Load("Prefabs/Player") as GameObject;
+					player = GameObject.Instantiate (playerPrefab, new Vector3 (i, 0.0f, j), new Quaternion ()) as GameObject;
+					player.name = "Player";
+					break;
 				}
 			}
 		}
@@ -55,10 +63,5 @@ public class LevelManager : MonoBehaviour {
 		camera.transform.Rotate(90.0f, 0.0f, 0.0f);
 		camera.name = "Main Camera";
 		//camera.transform.LookAt(gameObject.transform);
-	}
-	void SetupPlayer(){
-		GameObject playerPrefab = Resources.Load("Prefabs/Player") as GameObject;
-		player = GameObject.Instantiate (playerPrefab, new Vector3 (40.0f, 0.0f, 3.0f), new Quaternion ()) as GameObject;
-		player.name = "Player";
 	}
 }
