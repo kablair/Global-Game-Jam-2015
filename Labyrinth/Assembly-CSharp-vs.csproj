@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Resources\Scripts\ItemPickup.cs" />
      <Compile Include="Assets\Resources\Scripts\LevelManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Paused.cs" />
      <Compile Include="Assets\Resources\Scripts\PlayerScript.cs" />
  <Reference Include="UnityEngine.UI">

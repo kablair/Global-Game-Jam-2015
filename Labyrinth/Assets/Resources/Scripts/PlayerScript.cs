@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviour {
 		
 		transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed);
 		transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * playerSpeed, Space.World);
-		if(!Paused.paused)
+		if(!MenuScript.paused)
 		{
 		checkRotation ();
 		setSprintKey ();
@@ -50,6 +50,7 @@ public class PlayerScript : MonoBehaviour {
 						vtransform=0;
 				}
 
+		if(!(htransform==0&&vtransform==0))
 		transform.GetChild (0).forward= new Vector3(htransform,0,vtransform);
 	}
 	void setSprintKey(){
