@@ -59,5 +59,6 @@ public class LevelManager : MonoBehaviour {
 	void SetupPlayer(){
 		GameObject playerPrefab = Resources.Load("Prefabs/Player") as GameObject;
 		player = GameObject.Instantiate (playerPrefab, new Vector3 (40.0f, 0.0f, 3.0f), new Quaternion ()) as GameObject;
+		player.name = "Player";
 	}
 }
