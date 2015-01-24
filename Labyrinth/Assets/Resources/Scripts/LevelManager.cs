@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class LevelManager : MonoBehaviour {
 	public string LevelRawDataFileName;
 	public Material WallMaterial;
+	public float CameraHeight;
 
 	Texture2D m_levelRawData;
 
@@ -85,7 +86,7 @@ public class LevelManager : MonoBehaviour {
 		GameObject camera = GameObject.Instantiate(m_cameraPrefab) as GameObject;
 		camera.name = "Main Camera";
 		camera.transform.parent = m_player.transform;
-		camera.transform.localPosition = new Vector3(0.0f, 30.0f, 0.0f);
+		camera.transform.localPosition = new Vector3(0.0f, CameraHeight, 0.0f);
 		camera.transform.Rotate(90.0f, 0.0f, 0.0f);
 	}
 
