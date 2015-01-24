@@ -14,7 +14,9 @@ public class LevelManager : MonoBehaviour {
 	GameObject m_lightsPrefab;
 	GameObject m_playerPrefab;
 	GameObject m_cameraPrefab;
-
+	GameObject m_applePrefab;
+	Vector3 m_appleStartPosition;
+	GameObject m_apple;
 	GameObject m_player;
 	Vector3 m_playerStartPosition;
 
@@ -40,6 +42,7 @@ public class LevelManager : MonoBehaviour {
 
 		InstantiatePlayer();
 		InstantiateCamera();
+		InstantiateApple();
 	}
 
 	void LoadPrefabs() {
@@ -48,6 +51,7 @@ public class LevelManager : MonoBehaviour {
 		m_lightsPrefab = Resources.Load("Prefabs/Lights") as GameObject;
 		m_playerPrefab = Resources.Load("Prefabs/Player") as GameObject;
 		m_cameraPrefab = Resources.Load("Prefabs/Camera") as GameObject;
+		m_applePrefab = Resources.Load ("Prefabs/Apple") as GameObject;
 	}
 	void LevelDataPreProcess() {
 		m_levelRawData = Resources.Load ("LevelData/" + LevelRawDataFileName) as Texture2D;
@@ -71,8 +75,17 @@ public class LevelManager : MonoBehaviour {
 				if (color == Color.green) {
 					SetPlayerPosition(i, j);
 				}
+				else if (color == Color.red){
+					SetApplePosition(i,j);}
 			}
 		}
+	}
+	void SetApplePosition(int x, int z){
+		m_appleStartPosition = new Vector3 (x, 0.0f, z);
+	}
+	void InstantiateApple(){
+		m_apple = GameObject.Instantiate(m_applePrefab, m_appleStartPosition, new Quaternion ()) as GameObject;
+		m_apple.name = "Apple";
 	}
 
 	void SetPlayerPosition(int x, int z) {
