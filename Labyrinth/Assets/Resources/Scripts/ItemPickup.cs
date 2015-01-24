@@ -1,22 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ItemPickup : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
-	void onTriggerEnter(Collider col)
+public class ItemPickup : MonoBehaviour
+{
+	void OnCollisionEnter (Collision col)
 	{
-		//if (col.gameObject.tag == "Player") {
-			//Destroy (this.gameObject);
-
-		//}
-
+		if(col.gameObject.name=="Item1")
+			Destroy(col.gameObject);
+	
 	}
 }

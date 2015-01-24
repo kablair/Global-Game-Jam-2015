@@ -101,7 +101,7 @@ public class LevelManager : MonoBehaviour {
 	void InstantiateItems() {
 		m_item1 = GameObject.Instantiate (m_itemPrefab, m_item1StartPosition, new Quaternion ()) as GameObject;
 		m_item1.name = "Item1";
-		//m_item1.tag = "Item1";
+
 	}
 
 
