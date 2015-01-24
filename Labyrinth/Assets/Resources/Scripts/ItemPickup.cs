@@ -27,6 +27,9 @@ public class ItemPickup : MonoBehaviour
 			{
 				return true;
 			}
+			else if (col.gameObject.name.Equals ("WallObject")) {
+				audio.PlayOneShot(this.audio.clip);
+			}
 			
 		}
 		return false;
