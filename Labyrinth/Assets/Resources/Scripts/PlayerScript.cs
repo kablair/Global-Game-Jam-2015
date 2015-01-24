@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviour {
 		
 		transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed);
 		transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * playerSpeed, Space.World);
-		if(!MenuScript.paused)
+		if(!Paused.paused)
 		{
 		checkRotation ();
 		setSprintKey ();

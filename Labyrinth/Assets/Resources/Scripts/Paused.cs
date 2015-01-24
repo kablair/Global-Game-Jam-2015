@@ -7,7 +7,7 @@ public class Paused : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		hide ();
 	}
 	
 	// Update is called once per frame
@@ -15,12 +15,25 @@ public class Paused : MonoBehaviour {
 		if(Input.GetKeyDown("p") && paused == false) {  
 			paused = true;  
 			Time.timeScale = 0;
+			show();
 
 		}
 		else if(Input.GetKeyDown("p") && paused == true) {
 			paused = false;
 			Time.timeScale = 1;
+			hide ();
 
 		}  
 	}
+
+	public void hide()
+	{
+		GetComponent<Canvas> ().enabled = false;
+		
+	}
+	public void show()
+	{
+		GetComponent<Canvas> ().enabled = true;
+	}
+
 }
