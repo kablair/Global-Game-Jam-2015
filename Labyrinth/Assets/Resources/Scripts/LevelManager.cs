@@ -2,9 +2,15 @@
 using System.Collections;
 
 public class LevelManager : MonoBehaviour {
+	Texture2D m_levelData;
+
 
 	// Use this for initialization
 	void Start () {
+		m_levelData = Resources.Load ("LevelData/level1") as Texture2D;
+		Debug.Log("Loading Level...");
+		Debug.Log("Level Dimensions = " + m_levelData.width + " x " + m_levelData.height);
+
 		SetupCamera();
 		SetupLevel();
 		SetupLight();
@@ -26,10 +32,9 @@ public class LevelManager : MonoBehaviour {
 
 		GameObject wallContainer = new GameObject();
 		wallContainer.name = "Wall Container";
-		Texture2D testLevel = Resources.Load ("TestLevel") as Texture2D;
-		for (int i = 0; i < testLevel.width; i++) {
-			for (int j = 0; j < testLevel.height; j++) {
-				Color color = testLevel.GetPixel(i, j);
+		for (int i = 0; i < m_levelData.width; i++) {
+			for (int j = 0; j < m_levelData.height; j++) {
+				Color color = m_levelData.GetPixel(i, j);
 				if (color == Color.black) {
 					GameObject wall = GameObject.Instantiate(wallPrefab, new Vector3(i, 0.0f, j), new Quaternion()) as GameObject;
 					wall.transform.parent = wallContainer.transform;
@@ -40,8 +45,8 @@ public class LevelManager : MonoBehaviour {
 
 		GameObject floor = GameObject.Instantiate(floorPrefab) as GameObject;
 		floor.name = "Floor";
-		floor.transform.localScale = new Vector3(testLevel.width, 1.0f, testLevel.height);
-		floor.transform.position = new Vector3(testLevel.width / 2.0f - 0.5f, -1.0f, testLevel.height / 2.0f - 0.5f);
+		floor.transform.localScale = new Vector3(m_levelData.width, 1.0f, m_levelData.height);
+		floor.transform.position = new Vector3(m_levelData.width / 2.0f - 0.5f, -1.0f, m_levelData.height / 2.0f - 0.5f);
 	}
 
 	void SetupLight() {
