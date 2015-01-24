@@ -50,6 +50,7 @@ public class LevelManager : MonoBehaviour {
 				Color color = m_levelRawData.GetPixel(i, j);
 				if (color == Color.black) {
 					AddWallPosition(i, j);
+					break;
 				} else if (color == Color.green) {
 					SetPlayerPosition(i, j);
 					break;
