@@ -20,18 +20,37 @@ public class PlayerScript : MonoBehaviour {
 		}
 	}
 	void checkRotation(){
-		if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)){
-			transform.GetChild(0).forward = new Vector3(-1f, 0f, 0f);
-		   }
-		else if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)){
-			transform.GetChild(0).forward = new Vector3(0f, 0f, 1f);
-		}
-		else if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)){
-			transform.GetChild(0).forward = new Vector3(1f, 0f, 0f);
-		}
-		else if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)){
-			transform.GetChild(0).forward = new Vector3(0f, 0f, -1f);
-		}
+//		if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)){
+//			transform.GetChild(0).forward = new Vector3(-1f, 0f, 0f);
+//		   }
+//		else if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)){
+//			transform.GetChild(0).forward = new Vector3(0f, 0f, 1f);
+//		}
+//		else if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)){
+//			transform.GetChild(0).forward = new Vector3(1f, 0f, 0f);
+//		}
+//		else if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)){
+//			transform.GetChild(0).forward = new Vector3(0f, 0f, -1f);
+//		}
+
+		float vtransform;
+		float htransform;
+			if (Input.GetAxis ("Horizontal") > 0) {
+						htransform=1f;
+				} else if (Input.GetAxis ("Horizontal") < 0) {
+						htransform=-1f;
+				} else {
+						htransform=0;
+				}
+			if (Input.GetAxis ("Vertical") > 0) {
+						vtransform = 1;
+				} else if (Input.GetAxis ("Vertical") < 0) {
+						vtransform = -1;
+				} else {
+						vtransform=0;
+				}
+
+		transform.GetChild (0).forward= new Vector3(htransform,0,vtransform);
 	}
 	void setSprintKey(){
 		if (Input.GetKeyDown (KeyCode.LeftShift)) {
