@@ -3,17 +3,19 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 
-	public float playerSpeed = 5.0f;
+	public float playerSpeed;
+
 	// Use this for initialization
 	void Start () {
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		setSprintKey ();
-		transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed);
-		transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * playerSpeed, Space.World);
-		checkRotation ();
+		if (!Paused.paused) {
+						checkRotation ();
+						getSprintKey ();
+						move ();
+				}
 	}
 	void checkRotation(){
 				if (Input.GetKeyDown (KeyCode.A) || Input.GetKeyDown (KeyCode.LeftArrow)) {
@@ -26,12 +28,16 @@ public class PlayerScript : MonoBehaviour {
 						transform.GetChild (0).forward = new Vector3 (0f, 0f, -1f);
 				}
 	}
-	void setSprintKey(){
+
+		void move() {
+			transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed);
+			transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * playerSpeed, Space.World);
+		}
+		void getSprintKey(){
 				if (Input.GetKeyDown (KeyCode.LeftShift)) {
 						playerSpeed = 10.0f;
-						} 
-		if (Input.GetKeyUp (KeyCode.LeftShift)) {		
-			playerSpeed = 5.0f;
+				} else {
+						playerSpeed = 5.0f;
+				}
 		}
-	}
 }

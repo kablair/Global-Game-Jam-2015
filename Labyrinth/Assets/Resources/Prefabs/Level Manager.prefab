@@ -11,7 +11,7 @@ GameObject:
   - 114: {fileID: 11454382}
   m_Layer: 0
   m_Name: Level Manager
-  m_TagString: Other
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

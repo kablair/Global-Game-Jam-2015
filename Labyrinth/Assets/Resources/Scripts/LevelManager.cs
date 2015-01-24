@@ -15,11 +15,14 @@ public class LevelManager : MonoBehaviour {
 	GameObject m_playerPrefab;
 	GameObject m_cameraPrefab;
 	GameObject m_applePrefab;
-	Vector3 m_appleStartPosition;
-	GameObject m_apple;
+	GameObject m_itemPrefab;
+//	Vector3 m_appleStartPosition;
+//	GameObject m_apple;
 	GameObject m_player;
+	GameObject m_item1;
 	Vector3 m_playerStartPosition;
 
+	Vector3 m_item1StartPosition;
 	GameObject m_level;
 	bool[,] m_wallLocations;
 
@@ -33,7 +36,7 @@ public class LevelManager : MonoBehaviour {
 		LoadPrefabs();
 		LevelDataPreProcess();
 		ProcessLevelData();
-
+		SetItemStartPosition (114, 20);
 		//InstantiateWallMesh();
 		InstantiateWalls();
 		InstantiateFloor();
@@ -42,7 +45,7 @@ public class LevelManager : MonoBehaviour {
 
 		InstantiatePlayer();
 		InstantiateCamera();
-		InstantiateApple();
+//		InstantiateApple();
 	}
 
 	void LoadPrefabs() {
@@ -51,7 +54,8 @@ public class LevelManager : MonoBehaviour {
 		m_lightsPrefab = Resources.Load("Prefabs/Lights") as GameObject;
 		m_playerPrefab = Resources.Load("Prefabs/Player") as GameObject;
 		m_cameraPrefab = Resources.Load("Prefabs/Camera") as GameObject;
-		m_applePrefab = Resources.Load ("Prefabs/Apple") as GameObject;
+//		m_applePrefab = Resources.Load ("Prefabs/Apple") as GameObject;
+		m_itemPrefab = Resources.Load("Prefabs/Item 1") as GameObject;
 	}
 	void LevelDataPreProcess() {
 		m_levelRawData = Resources.Load ("LevelData/" + LevelRawDataFileName) as Texture2D;
@@ -75,26 +79,37 @@ public class LevelManager : MonoBehaviour {
 				if (color == Color.green) {
 					SetPlayerPosition(i, j);
 				}
-				else if (color == Color.red){
-					SetApplePosition(i,j);}
+//				else if (color == Color.red){
+//					SetApplePosition(i,j);}
 			}
 		}
 	}
-	void SetApplePosition(int x, int z){
-		m_appleStartPosition = new Vector3 (x, 0.0f, z);
-	}
-	void InstantiateApple(){
-		m_apple = GameObject.Instantiate(m_applePrefab, m_appleStartPosition, new Quaternion ()) as GameObject;
-		m_apple.name = "Apple";
-	}
+//	void SetApplePosition(int x, int z){
+//		m_appleStartPosition = new Vector3 (x, 0.0f, z);
+//	}
+//	void InstantiateApple(){
+//		m_apple = GameObject.Instantiate(m_applePrefab, m_appleStartPosition, new Quaternion ()) as GameObject;
+//		m_apple.name = "Apple";
+//	}
 
 	void SetPlayerPosition(int x, int z) {
-		m_playerStartPosition = new Vector3 (x, 0.0f, z);
+		m_playerStartPosition = new Vector3 (x, 1f, z);
+	}
+	
+	void SetItemStartPosition(int x, int z) {
+		m_item1StartPosition = new Vector3 (x, 1f, z);
 	}
 	void InstantiatePlayer() {
 		m_player = GameObject.Instantiate (m_playerPrefab, m_playerStartPosition, new Quaternion ()) as GameObject;
 		m_player.name = "Player";
+		m_player.tag = "Player";
 	}
+	void InstantiateItems() {
+		m_item1 = GameObject.Instantiate (m_itemPrefab, m_item1StartPosition, new Quaternion ()) as GameObject;
+		m_item1.name = "Item1";
+		//m_item1.tag = "Item1";
+	}
+
 	void InstantiateCamera() {
 		GameObject camera = GameObject.Instantiate(m_cameraPrefab) as GameObject;
 		camera.name = "Main Camera";
