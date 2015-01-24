@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour {
 	Vector3 m_playerStartPosition;
 
 	GameObject m_level;
+	ArrayList m_wallCorners;
 	ArrayList m_wallLocations;
 	
 	void Start () {
@@ -50,10 +51,8 @@ public class LevelManager : MonoBehaviour {
 				Color color = m_levelRawData.GetPixel(i, j);
 				if (color == Color.black) {
 					AddWallPosition(i, j);
-					break;
 				} else if (color == Color.green) {
 					SetPlayerPosition(i, j);
-					break;
 				}
 			}
 		}
