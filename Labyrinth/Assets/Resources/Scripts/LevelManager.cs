@@ -78,7 +78,7 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 	void InstantiateApple(int x, int z){
-		GameObject m_apple = GameObject.Instantiate(m_applePrefab, new Vector3 (x, 0.0f, z), new Quaternion ()) as GameObject;
+		GameObject m_apple = GameObject.Instantiate(m_applePrefab, new Vector3 (x, 1.0f, z), new Quaternion ()) as GameObject;
 		m_apple.name = "Apple";
 	}
 
