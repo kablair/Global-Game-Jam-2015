@@ -46,8 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Actionbar.cs" />
+     <Compile Include="Assets\Resources\Scripts\Inventory.cs" />
      <Compile Include="Assets\Resources\Scripts\ItemPickup.cs" />
      <Compile Include="Assets\Resources\Scripts\ItemRotation.cs" />
+     <Compile Include="Assets\Resources\Scripts\ItemSort.cs" />
      <Compile Include="Assets\Resources\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Resources\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Paused.cs" />

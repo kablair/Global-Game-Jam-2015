@@ -19,6 +19,12 @@ public class PlayerScript : MonoBehaviour {
 		setSprintKey ();
 		}
 	}
+
+//	public Vector3 getLocation()
+//	{
+//		return new Vector3(this.GetComponentInParent.lat)
+//	}
+
 	void checkRotation(){
 //		if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)){
 //			transform.GetChild(0).forward = new Vector3(-1f, 0f, 0f);
