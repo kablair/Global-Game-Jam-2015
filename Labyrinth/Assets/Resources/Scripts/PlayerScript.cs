@@ -6,6 +6,8 @@ public class PlayerScript : MonoBehaviour {
 	public static Vector3 position;
 	public float playerSpeed;
 	public Animator animator;
+	public static bool attacking;
+	public static int attackValue=1;
 	// Use this for initialization
 	void Start () {
 		animator = this.GetComponentInChildren<Animator> ();
@@ -22,6 +24,7 @@ public class PlayerScript : MonoBehaviour {
 			position=transform.position;
 		checkRotation ();
 		setSprintKey ();
+		checkAttack();
 		}
 	}
 
@@ -29,6 +32,12 @@ public class PlayerScript : MonoBehaviour {
 //	{
 //		return new Vector3(this.GetComponentInParent.lat)
 //	}
+
+	static void checkAttack()
+	{
+		if(Input.GetKeyDown(KeyCode.Space))
+			attacking=true;
+	}
 
 	void checkRotation(){
 //		if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)){
@@ -68,6 +77,8 @@ public class PlayerScript : MonoBehaviour {
 		if(!(htransform==0&&vtransform==0))
 		transform.GetChild (0).forward= new Vector3(htransform,0,vtransform);
 	}
+	
+
 	void setSprintKey(){
 		if (Input.GetKeyDown (KeyCode.LeftShift)) {
 						playerSpeed = 10.0f;
