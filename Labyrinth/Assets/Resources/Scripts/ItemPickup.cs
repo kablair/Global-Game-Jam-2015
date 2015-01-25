@@ -6,7 +6,7 @@ public class ItemPickup : MonoBehaviour
 {
 	//Actionbar actionBar;
 	//Sprite m_applePrefab;
-
+	public static string pickupName = "";
 	void Start(){
 		//m_applePrefab = Resources.Load ("Textures/ArrowTexture") as Sprite;
 	}
@@ -15,12 +15,16 @@ public class ItemPickup : MonoBehaviour
 	{
 		if (isItem (col.gameObject)) {
 						audio.PlayOneShot (col.gameObject.audio.clip);
-						Inventory.add(col.gameObject);
+			GameObject pickup = new GameObject();
+				pickup = col.gameObject;			
+			Inventory.add(pickup);
 						//col.gameObject.transform.position=new Vector3(100,0,18);
 						//col.gameObject.transform.localScale+= new Vector3(0f,-0.98f,0f);
 						//stop item rotation
 			//reportCollision(col.gameObject.name);
-						Destroy (col.gameObject);
+					
+				 pickupName = col.gameObject.name;
+			Destroy (col.gameObject);
 		}
 			else if (isMonster (col.gameObject)) {
 			audio.PlayOneShot (col.gameObject.audio.clip);
