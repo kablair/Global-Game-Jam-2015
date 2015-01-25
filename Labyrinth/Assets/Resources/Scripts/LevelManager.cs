@@ -139,7 +139,55 @@ public class LevelManager : MonoBehaviour {
 					GameObject wall = GameObject.Instantiate(m_wallPrefab, position, new Quaternion()) as GameObject;
 					wall.name = "Wall";
 					wall.transform.parent = m_level.transform;
-					wall.transform.localScale = scale;
+					wall.transform.GetChild(0).localScale = scale;
+
+					float sHeight = scale.y;
+					float sWidth = scale.z;
+					float sLength = scale.x;
+					Vector2[] mesh_UVs = wall.transform.GetChild(0).gameObject.GetComponent<MeshFilter>().mesh.uv;
+
+					//Front
+					mesh_UVs[ 2 ] = new Vector2( 0 , sHeight );
+					mesh_UVs[ 3 ] = new Vector2( sLength , sHeight );
+					mesh_UVs[ 0 ] = new Vector2( 0 , 0 );
+					mesh_UVs[ 1 ] = new Vector2( sLength , 0 );
+					
+					
+					//Back
+					mesh_UVs[ 6 ] = new Vector2( 0 , sHeight );
+					mesh_UVs[ 7 ] = new Vector2( sLength , sHeight );
+					mesh_UVs[ 10 ] = new Vector2( 0 , 0 );
+					mesh_UVs[ 11 ] = new Vector2( sLength , 0 );
+					
+					
+					//Left
+					mesh_UVs[ 19 ] = new Vector2( 0 , sHeight );
+					mesh_UVs[ 17 ] = new Vector2( sWidth , sHeight );
+					mesh_UVs[ 16 ] = new Vector2( 0 , 0 );
+					mesh_UVs[ 18 ] = new Vector2( sWidth , 0 );
+					
+					
+					//Right
+					mesh_UVs[ 23 ] = new Vector2( 0 , sHeight );
+					mesh_UVs[ 21 ] = new Vector2( sWidth , sHeight );
+					mesh_UVs[ 20 ] = new Vector2( 0 , 0 );
+					mesh_UVs[ 22 ] = new Vector2( sWidth , 0 );
+					
+					
+					//Top
+					mesh_UVs[ 4 ] = new Vector2( 0 , sWidth );
+					mesh_UVs[ 5 ] = new Vector2( sLength , sWidth );
+					mesh_UVs[ 8 ] = new Vector2( 0 , 0 );
+					mesh_UVs[ 9 ] = new Vector2( sLength , 0 );
+					
+					
+					//Bottom
+					mesh_UVs[ 15 ] = new Vector2( 0 , sWidth );
+					mesh_UVs[ 13 ] = new Vector2( sLength , sWidth );
+					mesh_UVs[ 12 ] = new Vector2( 0 , 0 );
+					mesh_UVs[ 14 ] = new Vector2( sLength , 0 );
+
+					wall.transform.GetChild(0).gameObject.GetComponent<MeshFilter>().mesh.uv = mesh_UVs;
 				}
 			}
 		}
@@ -147,8 +195,9 @@ public class LevelManager : MonoBehaviour {
 	void InstantiateFloor() {
 		GameObject floor = GameObject.Instantiate(m_floorPrefab) as GameObject;
 		floor.name = "Floor";
-		floor.transform.localScale = new Vector3(m_levelRawData.width, 1.0f, m_levelRawData.height);
+		floor.transform.GetChild(0).transform.localScale = new Vector3(m_levelRawData.width, 1.0f, m_levelRawData.height);
 		floor.transform.position = new Vector3(m_levelRawData.width / 2.0f - 0.5f, -1.0f, m_levelRawData.height / 2.0f - 0.5f);
+		floor.transform.GetChild(0).GetComponent<MeshFilter>().renderer.material.mainTextureScale = new Vector3(m_levelRawData.width, m_levelRawData.height);
 	}
 	void InstantiateLight() {
 		GameObject lights = GameObject.Instantiate(m_lightsPrefab) as GameObject;
