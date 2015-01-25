@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour {
 	GameObject m_wallPrefab;
 	GameObject m_floorPrefab;
 	GameObject m_lightsPrefab;
-	GameObject m_playerPrefab;
+	public GameObject m_playerPrefab;
 	GameObject m_cameraPrefab;
 	GameObject m_applePrefab;
 	//GameObject m_itemPrefab;
