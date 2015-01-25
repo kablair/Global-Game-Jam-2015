@@ -52,10 +52,11 @@
      <Compile Include="Assets\Resources\Scripts\ItemRotation.cs" />
      <Compile Include="Assets\Resources\Scripts\ItemSort.cs" />
      <Compile Include="Assets\Resources\Scripts\LevelManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\MenuScript.cs" />
+     <Compile Include="Assets\Resources\Scripts\MainMenuScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Paused.cs" />
+     <Compile Include="Assets\Resources\Scripts\PlayButton.cs" />
      <Compile Include="Assets\Resources\Scripts\PlayerScript.cs" />
-     <Compile Include="Assets\UIScript.cs" />
+     <Compile Include="Assets\StartMenuScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
