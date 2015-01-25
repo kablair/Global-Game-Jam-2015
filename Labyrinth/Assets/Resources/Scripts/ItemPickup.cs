@@ -26,14 +26,38 @@ public class ItemPickup : MonoBehaviour
 				 pickupName = col.gameObject.name;
 			Destroy (col.gameObject);
 		}
-			else if (col.gameObject.name.Equals ("WallModel")) {
-			audio.PlayOneShot(this.audio.clip);
+			else if (isMonster (col.gameObject)) {
+			audio.PlayOneShot (col.gameObject.audio.clip);
+			Monster monster = col.transform.GetComponent<Monster>();
+			if(PlayerScript.attacking)
+			{
+				monster.takeDamage();
+			}
+			Health.damage(monster.damage);
+
+		}
+		else if (isWall(col.gameObject)) {
+			audio.PlayOneShot(col.gameObject.audio.clip);
 		}
 	}
 
 	bool isItem(GameObject obj)
 	{
 		if (obj.tag.Equals("Item")) return true;
+		return false;
+	}
+
+	bool isMonster(GameObject obj)
+	{
+		if (obj.tag.Equals("Monster")) return true;
+		return false;
+	}
+
+	bool isWall(GameObject obj)
+	{
+		if (obj.name.Equals ("WallModel"))
+						return true;
+		else
 		return false;
 	}
 //	public void reportCollision( string name){

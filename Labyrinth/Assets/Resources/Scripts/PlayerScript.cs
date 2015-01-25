@@ -18,7 +18,6 @@ public class PlayerScript : MonoBehaviour {
 		Vector3 velocity = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
 		velocity *= Time.deltaTime * playerSpeed * 100;
 		rigidbody.velocity = velocity;
-
 		if(!Paused.paused)
 		{
 			position=transform.position;
@@ -33,10 +32,14 @@ public class PlayerScript : MonoBehaviour {
 //		return new Vector3(this.GetComponentInParent.lat)
 //	}
 
-	static void checkAttack()
+	void checkAttack()
 	{
-		if(Input.GetKeyDown(KeyCode.Space))
-			attacking=true;
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			audio.PlayOneShot(this.audio.clip);
+						attacking = true;
+
+		}
+
 	}
 
 	void checkRotation(){

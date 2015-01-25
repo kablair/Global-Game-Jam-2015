@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Health : MonoBehaviour {
 
-	public static int maxHealth=10;
+	public static int maxHealth=2;
 	public static int heath=maxHealth;
 
 	// Use this for initialization
@@ -18,6 +18,9 @@ public class Health : MonoBehaviour {
 
 	public static void damage(int damage)
 	{
-
+		maxHealth -= damage;
+		if (maxHealth <= 0) {
+			Application.Quit();
+		}
 	}
 }

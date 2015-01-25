@@ -11,10 +11,9 @@ GameObject:
   - 20: {fileID: 2076602}
   - 124: {fileID: 12476602}
   - 92: {fileID: 9276602}
-  - 81: {fileID: 8176602}
   - 114: {fileID: 11434414}
   - 135: {fileID: 13508862}
-  - 82: {fileID: 8215954}
+  - 82: {fileID: 8216614}
   m_Layer: 0
   m_Name: Apple
   m_TagString: Item
@@ -48,7 +47,7 @@ GameObject:
   - 95: {fileID: 9536934}
   m_Layer: 0
   m_Name: AppleModel
-  m_TagString: Item
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,14 +236,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136942}
   m_Mesh: {fileID: 4300002, guid: 8a65e151bc5a54743aef04e4f69b7cff, type: 3}
---- !u!81 &8176602
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136934}
-  m_Enabled: 1
---- !u!82 &8215954
+--- !u!82 &8216614
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -384,7 +376,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11434414
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136934}
@@ -402,7 +394,7 @@ Behaviour:
   m_Enabled: 1
 --- !u!135 &13508862
 SphereCollider:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136934}
