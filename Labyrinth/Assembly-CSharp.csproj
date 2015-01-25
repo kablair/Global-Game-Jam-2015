@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Actionbar.cs" />
+     <Compile Include="Assets\ExitButton.cs" />
      <Compile Include="Assets\GUIInventoryScript.cs" />
      <Compile Include="Assets\GUIScript.cs" />
      <Compile Include="Assets\Health.cs" />
