@@ -91,8 +91,8 @@ public class LevelManager : MonoBehaviour {
 		GameObject camera = GameObject.Instantiate(m_cameraPrefab) as GameObject;
 		camera.name = "Main Camera";
 		camera.transform.parent = m_player.transform;
-		camera.transform.localPosition = new Vector3(0.0f, CameraHeight, 0.0f);
-		camera.transform.Rotate(90.0f, 0.0f, 0.0f);
+		camera.transform.localPosition = new Vector3(0.0f, 7.0f, -7.0f);
+		camera.transform.Rotate(45.0f, 0.0f, 0.0f);
 	}
 
 	void SetWallLocation(int x, int z, bool isWall) {
