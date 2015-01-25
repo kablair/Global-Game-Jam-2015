@@ -87,7 +87,9 @@ public class LevelManager : MonoBehaviour {
 					//Door Vertical Closed
 					InstantiateDoor(i, j, false, false);
 				}
-
+				else if ((color.r == 1.0f) && (color.g == 0.0f) && (color.b == 1.0f)) {
+					InstantiateWinVolume(i, j);
+				}
 			}
 		}
 	}
@@ -98,6 +100,10 @@ public class LevelManager : MonoBehaviour {
 	void InstantiateDoor(int x, int z, bool isHorizontal, bool isOpen) {
 		GameObject m_door = GameObject.Instantiate(m_doorPrefab, new Vector3 (x, 0.0f, z), new Quaternion ()) as GameObject;
 		m_door.name = "Door";
+	}
+	void InstantiateWinVolume(int x, int z) {
+//		GameObject m_win = GameObject.Instantiate(m_winPrefab, new Vector3 (x, 0.0f, z), new Quaternion ()) as GameObject;
+//		m_win.name = "Win Volume";
 	}
 
 	void SetPlayerPosition(int x, int z) {
