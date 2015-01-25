@@ -1,15 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\PlayButton.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\LevelManager.cs">
     <Files>
+      <File FileName="Assets\ExitButton.cs" Line="19" Column="1" />
       <File FileName="Assets\Resources\Scripts\PlayerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\ItemPickup.cs" Line="19" Column="21" />
-      <File FileName="Assets\Resources\Scripts\Inventory.cs" Line="71" Column="33" />
-      <File FileName="Assets\Resources\Scripts\LevelManager.cs" Line="230" Column="1" />
+      <File FileName="Assets\Resources\Scripts\ItemPickup.cs" Line="44" Column="2" />
+      <File FileName="Assets\Resources\Scripts\Inventory.cs" Line="76" Column="1" />
+      <File FileName="Assets\Resources\Scripts\LevelManager.cs" Line="101" Column="27" />
       <File FileName="Assets\Actionbar.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUIInventoryScript.cs" Line="36" Column="4" />
-      <File FileName="Assets\Health.cs" Line="11" Column="2" />
-      <File FileName="Assets\Resources\Scripts\PlayButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\GUIInventoryScript.cs" Line="45" Column="1" />
+      <File FileName="Assets\Health.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\PlayButton.cs" Line="14" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
