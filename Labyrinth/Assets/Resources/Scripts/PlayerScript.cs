@@ -14,7 +14,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		Vector3 velocity = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
 		velocity *= Time.deltaTime * playerSpeed * 100;
 		rigidbody.velocity = velocity;
