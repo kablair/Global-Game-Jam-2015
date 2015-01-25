@@ -10,7 +10,7 @@ PlayerSettings:
   targetGlesGraphics: 1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: GGJ2015
+  companyName: DefaultCompany
   productName: Labyrinth
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -70,7 +70,7 @@ PlayerSettings:
   iPhoneBundleIdentifier: com.Company.ProductName
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
-  productGUID: ffa6261c65825a240be95be205ce3bcb
+  productGUID: 9b1d99d72e5838b4b8a82821d2ed9838
   iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
@@ -106,16 +106,9 @@ PlayerSettings:
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons:
-  - m_BuildTarget: 
-    m_Icons:
-    - m_Icon: {fileID: 2800000, guid: 15f099fd4af48b249a6ad2efc0363bcd, type: 3}
-      m_Size: 128
-  m_BuildTargetBatching:
-  - m_BuildTarget: Web
-    m_StaticBatching: 0
-    m_DynamicBatching: 1
-  webPlayerTemplate: APPLICATION:Black Background
+  m_BuildTargetIcons: []
+  m_BuildTargetBatching: []
+  webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
   locationUsageDescription: 
   XboxTitleId: 
