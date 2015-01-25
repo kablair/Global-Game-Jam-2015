@@ -8,9 +8,6 @@ public class Actionbar : MonoBehaviour {
 	GameObject m_action_bar_Prefab2;
 	GameObject m_action_bar;
 
-
-
-
 	// Use this for initialization
 	void Start () {
 		LoadPrefabs ();
@@ -42,9 +39,9 @@ public class Actionbar : MonoBehaviour {
 
 	}
 
-	public static void getSlotLocation(int SlotNo)
+	public Vector2 getSlotLocation(int SlotNo)
 	{
-		//return Vector3 (0, 0, 0);
+		return	m_action_bar.gameObject.transform.GetChild(SlotNo).position;
 	}
 
 }
