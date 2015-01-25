@@ -12,8 +12,10 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed);
-		transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * playerSpeed, Space.World);
+		Vector3 velocity = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+		velocity *= Time.deltaTime * playerSpeed * 100;
+		rigidbody.velocity = velocity;
+
 		if(!Paused.paused)
 		{
 		checkRotation ();
