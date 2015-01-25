@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour {
 	GameObject m_cameraPrefab;
 	GameObject m_applePrefab;
 	
-	GameObject m_player;
+	public GameObject m_player;
 	Vector3 m_playerStartPosition;
 
 	GameObject m_level;

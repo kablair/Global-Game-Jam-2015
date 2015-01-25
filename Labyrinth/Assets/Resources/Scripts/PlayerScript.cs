@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 
+	public static Vector3 position;
 	public float playerSpeed;
 	public Animator animator;
 	// Use this for initialization
@@ -18,6 +19,7 @@ public class PlayerScript : MonoBehaviour {
 
 		if(!Paused.paused)
 		{
+			position=transform.position;
 		checkRotation ();
 		setSprintKey ();
 		}
