@@ -91,8 +91,8 @@ public class LevelManager : MonoBehaviour {
 		GameObject camera = GameObject.Instantiate(m_cameraPrefab) as GameObject;
 		camera.name = "Main Camera";
 		camera.transform.parent = m_player.transform;
-		camera.transform.localPosition = new Vector3(0.0f, 7.0f, -7.0f);
-		camera.transform.Rotate(45.0f, 0.0f, 0.0f);
+		camera.transform.localPosition = new Vector3(0.0f, 7.0f, -5.0f);
+		camera.transform.Rotate(55.0f, 0.0f, 0.0f);
 	}
 
 	void InstantiateItems(){
@@ -141,7 +141,7 @@ public class LevelManager : MonoBehaviour {
 					int scaleY = y2-y;
 
 					Vector3 position = new Vector3(x+scaleX/2.0f-0.5f, 0.0f, y+scaleY/2.0f-0.5f);
-					Vector3 scale = new Vector3(scaleX, 1.0f, scaleY);
+					Vector3 scale = new Vector3(scaleX, 2.5f, scaleY);
 					GameObject wall = GameObject.Instantiate(m_wallPrefab, position, new Quaternion()) as GameObject;
 					wall.name = "Wall";
 					wall.transform.parent = m_level.transform;
