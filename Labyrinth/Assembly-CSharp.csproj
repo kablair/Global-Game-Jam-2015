@@ -48,7 +48,9 @@
   <ItemGroup>
      <Compile Include="Assets\Actionbar.cs" />
      <Compile Include="Assets\GUIScript.cs" />
+     <Compile Include="Assets\InventoryScript.cs" />
      <Compile Include="Assets\MonsterMovement.cs" />
+     <Compile Include="Assets\Resources\Scripts\DoorScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Inventory.cs" />
      <Compile Include="Assets\Resources\Scripts\ItemPickup.cs" />
      <Compile Include="Assets\Resources\Scripts\ItemRotation.cs" />
