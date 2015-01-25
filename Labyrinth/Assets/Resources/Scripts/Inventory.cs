@@ -6,6 +6,8 @@ public class Inventory : MonoBehaviour {
 	public static int numberOfSlots=6;
 	public static GameObject [] items = new GameObject[numberOfSlots];
 	public static int activeSlot=1;
+	public static bool newPickup = false;
+	static GameObject itemPickup;
 	// Use this for initialization
 	void Start () {
 
@@ -48,7 +50,7 @@ public class Inventory : MonoBehaviour {
 	public static void add(GameObject obj)
 	{
 		int slot = 1;
-
+		newPickup = true;
 		while(slot<=6)
 		{
 			if(items[slot-1]==null)
@@ -58,6 +60,7 @@ public class Inventory : MonoBehaviour {
 			}
 			slot++;
 		}
+		itemPickup = obj;
 	}
 
 	public static void drop(int slot)
@@ -65,6 +68,8 @@ public class Inventory : MonoBehaviour {
 		items [slot-1] = null;
 		//create item at player's feet
 	}
-
+	public static GameObject get(){
+		return itemPickup;
+	}
 
 }

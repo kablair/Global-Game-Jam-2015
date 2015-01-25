@@ -110,6 +110,7 @@ public class LevelManager : MonoBehaviour {
 	void InstantiateItems(){
 		GameObject m_apple = GameObject.Instantiate(m_applePrefab, new Vector3 (112, 1.0f, 116), new Quaternion ()) as GameObject;
 		m_apple.name = "Apple";
+		m_apple.tag = "Item";
 
 	}
 
