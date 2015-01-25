@@ -4,13 +4,14 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour {
 
 	public float playerSpeed;
+	public Animator animator;
 	// Use this for initialization
 	void Start () {
+		animator = this.GetComponentInChildren<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
 		transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed);
 		transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * playerSpeed, Space.World);
 		if(!MenuScript.paused)
@@ -36,16 +37,20 @@ public class PlayerScript : MonoBehaviour {
 		float vtransform;
 		float htransform;
 			if (Input.GetAxis ("Horizontal") > 0) {
-						htransform=1f;
+			animator.SetInteger("Direction", 3);			
+			htransform=1f;
 				} else if (Input.GetAxis ("Horizontal") < 0) {
-						htransform=-1f;
+			animator.SetInteger("Direction", 1);			
+			htransform=-1f;
 				} else {
 						htransform=0;
 				}
 			if (Input.GetAxis ("Vertical") > 0) {
-						vtransform = 1;
+			animator.SetInteger("Direction", 2);			
+			vtransform = 1;
 				} else if (Input.GetAxis ("Vertical") < 0) {
-						vtransform = -1;
+			animator.SetInteger("Direction", 0);			
+			vtransform = -1;
 				} else {
 						vtransform=0;
 				}
