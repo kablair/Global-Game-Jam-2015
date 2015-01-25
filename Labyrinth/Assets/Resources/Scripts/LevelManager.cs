@@ -90,7 +90,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	void SetPlayerPosition(int x, int z) {
-		m_playerStartPosition = new Vector3 (x, 1f, z);
+		m_playerStartPosition = new Vector3 (x, 0.5f, z);
 	}
 
 	void InstantiatePlayer() {
