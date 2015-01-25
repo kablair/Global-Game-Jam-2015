@@ -69,18 +69,20 @@ public class LevelManager : MonoBehaviour {
 				else if (color == Color.red){
 					InstantiateApple(i,j);
 				}
-				else if ((color.r == 0) && (color.g == 0) && (color.b == 255)) {
+				else if ((color.r == 0.0f) && (color.g == 0.0f) && (color.b == 1.0f)) {
 					//Door Horizontal Open
 				}
-				else if ((color.r == 100) && (color.g == 0) && (color.b == 255)) {
+				else if ((color.r == 100.0f/255.0f) && (color.g == 0.0f) && (color.b == 255/255.0f)) {
 					//Door Horizontal Closed
 				}
-				else if ((color.r == 0) && (color.g == 100) && (color.b== 255)) {
+				else if ((color.r == 0.0f) && (color.g == 100.0f/255.0f) && (color.b == 255.0f/255.0f)) {
 					//Door Vertical Open
 				}
-				else if ((color.r == 100) && (color.g == 100) && (color.b == 255)) {
+				else if ((color.r == 100.0f/255.0f) && (color.g == 100.0f/255.0f) && (color.b == 255.0f/255.0f)) {
 					//Door Vertical Closed
 				}
+
+				Debug.Log(color);
 			}
 		}
 	}
