@@ -14,7 +14,7 @@ public class Actionbar : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		LoadPrefabs ();
-		instantiateBar ();
+		//instantiateBar ();
 
 	}
 	
