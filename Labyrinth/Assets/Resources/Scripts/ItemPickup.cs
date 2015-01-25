@@ -39,6 +39,10 @@ public class ItemPickup : MonoBehaviour
 		else if (isWall(col.gameObject)) {
 			audio.PlayOneShot(col.gameObject.audio.clip);
 		}
+		else if (isHazard(col.gameObject)) {
+			audio.PlayOneShot(col.gameObject.audio.clip);
+			Health.damage(1);
+		}
 	}
 
 	bool isItem(GameObject obj)
@@ -50,6 +54,12 @@ public class ItemPickup : MonoBehaviour
 	bool isMonster(GameObject obj)
 	{
 		if (obj.tag.Equals("Monster")) return true;
+		return false;
+	}
+
+	bool isHazard(GameObject obj)
+	{
+		if (obj.tag.Equals("EnvironmentalHazard")) return true;
 		return false;
 	}
 

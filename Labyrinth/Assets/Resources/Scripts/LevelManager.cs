@@ -32,7 +32,6 @@ public class LevelManager : MonoBehaviour {
 		InstantiateFloor();
 		InstantiateItems ();
 		InstantiateLight();
-
 		InstantiatePlayer();
 		InstantiateCamera();
 	}
