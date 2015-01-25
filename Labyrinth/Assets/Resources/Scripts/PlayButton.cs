@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayButton : MonoBehaviour {
@@ -12,6 +12,6 @@ public class PlayButton : MonoBehaviour {
 	void Update () {
 	}
 	public void OnMouseDown() {
-				Application.LoadLevel ("Main");
+				Application.LoadLevel ("Intro");
 		}
 }
