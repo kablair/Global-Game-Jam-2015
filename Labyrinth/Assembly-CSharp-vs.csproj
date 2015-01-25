@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Actionbar.cs" />
+     <Compile Include="Assets\GUIScript.cs" />
      <Compile Include="Assets\Resources\Scripts\Inventory.cs" />
      <Compile Include="Assets\Resources\Scripts\ItemPickup.cs" />
      <Compile Include="Assets\Resources\Scripts\ItemRotation.cs" />
@@ -57,6 +58,7 @@
      <Compile Include="Assets\Resources\Scripts\PlayButton.cs" />
      <Compile Include="Assets\Resources\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\StartMenuScript.cs" />
+     <Compile Include="Assets\UIScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
