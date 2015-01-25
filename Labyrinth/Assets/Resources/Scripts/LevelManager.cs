@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour {
 	
 	void Start () {
 		if (LevelRawDataFileName == "") return;
-
+		Debug.Log ("hi the quick red fox");
 		LoadPrefabs();
 		LevelDataPreProcess();
 		ProcessLevelData();
