@@ -51,6 +51,7 @@
      <Compile Include="Assets\GUIInventoryScript.cs" />
      <Compile Include="Assets\GUIScript.cs" />
      <Compile Include="Assets\Health.cs" />
+     <Compile Include="Assets\HealthBarScript.cs" />
      <Compile Include="Assets\InventoryButton.cs" />
      <Compile Include="Assets\InventoryScript.cs" />
      <Compile Include="Assets\Resources\Scripts\DoorScript.cs" />
