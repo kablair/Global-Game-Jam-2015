@@ -1,15 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Health.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\MonsterMovement.cs">
     <Files>
-      <File FileName="Assets\Health.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\MonsterMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Health.cs" Line="19" Column="1" />
+      <File FileName="Assets\Resources\Scripts\MonsterMovement.cs" Line="40" Column="50" />
       <File FileName="Assets\Resources\Scripts\ItemPickup.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Scripts\LevelManager.cs" Line="1" Column="1" />
       <File FileName="Assets\RockSlide.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Scripts\ItemSort.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Scripts\MenuScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Inventory.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\Inventory.cs" Line="25" Column="4" />
       <File FileName="Assets\Actionbar.cs" Line="1" Column="1" />
       <File FileName="Assets\UIScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Scripts\ItemRotation.cs" Line="1" Column="1" />
