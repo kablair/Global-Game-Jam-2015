@@ -5,6 +5,7 @@ public class MonsterMovement : MonoBehaviour {
 
 	public Vector3 startingPoint;
 	int Speed= 10;
+	int rotationSpeed=10;
 	Vector3 wayPoint;
 	int Range= 10;
 	// Use this for initialization
@@ -14,37 +15,11 @@ public class MonsterMovement : MonoBehaviour {
 	}
 
 	void Update()
-	{
-		int playerDistance = Vector3.Distance (PlayerScript.position, transform.position);
-
-		//in range of player
-		if(playerDistance<10)
-		{
-			Charge ()
-		}
-		else
-		{
-			Wander();
-		}
+	{	//rotate to look at the player 
+		transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(PlayerScript.position - transform.position), rotationSpeed*Time.deltaTime);
+		transform.position += transform.forward * Speed * Time.deltaTime;
 	}
-	void Wander()
-	{
+
+
 	
-	}
-	void Charge()
-	{
-
-	}
-
-	void getDeltas()
-	[
-		 Vector3
-
-	}
-
-	void move(deltaX, deltaY)
-	{
-		transform.Translate(deltaX, 0, deltaY);
-	}
-
 }
