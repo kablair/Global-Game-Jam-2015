@@ -14,12 +14,23 @@ public class LevelManager : MonoBehaviour {
 	public GameObject m_playerPrefab;
 	GameObject m_cameraPrefab;
 	GameObject m_applePrefab;
+	GameObject m_doorPrefab;
 	
 	public GameObject m_player;
 	Vector3 m_playerStartPosition;
 
 	GameObject m_level;
 	bool[,] m_wallLocations;
+
+	enum Orientation {
+		Horizontal,
+		Vertical
+	}
+
+	enum OpenClose {
+		Open,
+		Close
+	}
 	
 	void Start () {
 		if (LevelRawDataFileName == "") return;
@@ -44,6 +55,7 @@ public class LevelManager : MonoBehaviour {
 		m_playerPrefab = Resources.Load("Prefabs/Player") as GameObject;
 		m_cameraPrefab = Resources.Load("Prefabs/Camera") as GameObject;
 		m_applePrefab = Resources.Load ("Prefabs/Apple") as GameObject;
+		m_doorPrefab = Resources.Load ("Prefabs/Door") as GameObject;
 	}
 	void LevelDataPreProcess() {
 		m_levelRawData = Resources.Load ("LevelData/" + LevelRawDataFileName) as Texture2D;
@@ -69,17 +81,21 @@ public class LevelManager : MonoBehaviour {
 				else if (color == Color.red){
 					InstantiateApple(i,j);
 				}
-				else if ((color.r = 0) && (color.g = 0) && (color.b = 255)) {
+				else if ((color.r == 0) && (color.g == 0) && (color.b == 255)) {
 					//Door Horizontal Open
+					InstantiateDoor (i, j, Orientation.Horizontal, OpenClose.Open);
 				}
-				else if ((color.r = 100) && (color.g = 0) && (color.b = 255)) {
+				else if ((color.r == 100) && (color.g == 0) && (color.b == 255)) {
 					//Door Horizontal Closed
+					InstantiateDoor (i, j, Orientation.Horizontal, OpenClose.Close);
 				}
-				else if ((color.r = 0) && (color.g = 100) && (color.b = 255)) {
+				else if ((color.r == 0) && (color.g == 100) && (color.b == 255)) {
 					//Door Vertical Open
+					InstantiateDoor (i, j, Orientation.Vertical, OpenClose.Open);
 				}
-				else if ((color.r = 100) && (color.g = 100) && (color.b = 255)) {
+				else if ((color.r == 100) && (color.g == 100) && (color.b == 255)) {
 					//Door Vertical Closed
+					InstantiateDoor (i, j, Orientation.Vertical, OpenClose.Close);
 				}
 			}
 		}
@@ -87,6 +103,10 @@ public class LevelManager : MonoBehaviour {
 	void InstantiateApple(int x, int z){
 		GameObject m_apple = GameObject.Instantiate(m_applePrefab, new Vector3 (x, 1.0f, z), new Quaternion ()) as GameObject;
 		m_apple.name = "Apple";
+	}
+	void InstantiateDoor(int x, int z, Orientation o, OpenClose oc) {
+		GameObject m_door = GameObject.Instantiate(m_doorPrefab, new Vector3(x, 0.0f, z), new Quaternion()) as GameObject;
+		m_door.name = "Door";
 	}
 
 	void SetPlayerPosition(int x, int z) {
