@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\MonsterMovement.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Health.cs">
     <Files>
-      <File FileName="Assets\Resources\Scripts\MonsterMovement.cs" Line="33" Column="5" />
-      <File FileName="Assets\Resources\Scripts\ItemPickup.cs" Line="15" Column="3" />
+      <File FileName="Assets\Health.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\MonsterMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\ItemPickup.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Scripts\LevelManager.cs" Line="1" Column="1" />
       <File FileName="Assets\RockSlide.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Scripts\ItemSort.cs" Line="1" Column="1" />

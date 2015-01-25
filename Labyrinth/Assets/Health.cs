@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class Health : MonoBehaviour {
-	
-	public static void maxHealth=10;
-	public static void heath=maxHealth;
+
+	public static int maxHealth=10;
+	public static int heath=maxHealth;
 
 	// Use this for initialization
 	void Start () {
