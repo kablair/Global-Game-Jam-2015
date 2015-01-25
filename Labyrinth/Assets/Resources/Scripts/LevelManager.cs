@@ -30,7 +30,7 @@ public class LevelManager : MonoBehaviour {
 
 		InstantiateWalls();
 		InstantiateFloor();
-
+		InstantiateItems ();
 		InstantiateLight();
 
 		InstantiatePlayer();
@@ -93,6 +93,12 @@ public class LevelManager : MonoBehaviour {
 		camera.transform.parent = m_player.transform;
 		camera.transform.localPosition = new Vector3(0.0f, 7.0f, -7.0f);
 		camera.transform.Rotate(45.0f, 0.0f, 0.0f);
+	}
+
+	void InstantiateItems(){
+		GameObject m_apple = GameObject.Instantiate(m_applePrefab, new Vector3 (112, 1.0f, 116), new Quaternion ()) as GameObject;
+		m_apple.name = "Apple";
+
 	}
 
 	void SetWallLocation(int x, int z, bool isWall) {
