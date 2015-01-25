@@ -14,12 +14,10 @@ public class LevelManager : MonoBehaviour {
 	public GameObject m_playerPrefab;
 	GameObject m_cameraPrefab;
 	GameObject m_applePrefab;
-	//GameObject m_itemPrefab;
 	
 	GameObject m_player;
 	Vector3 m_playerStartPosition;
 
-//	Vector3 m_item1StartPosition;
 	GameObject m_level;
 	bool[,] m_wallLocations;
 	
@@ -29,7 +27,6 @@ public class LevelManager : MonoBehaviour {
 		LoadPrefabs();
 		LevelDataPreProcess();
 		ProcessLevelData();
-//		SetItemStartPosition (114, 20);
 
 		InstantiateWalls();
 		InstantiateFloor();
@@ -47,7 +44,6 @@ public class LevelManager : MonoBehaviour {
 		m_playerPrefab = Resources.Load("Prefabs/Player") as GameObject;
 		m_cameraPrefab = Resources.Load("Prefabs/Camera") as GameObject;
 		m_applePrefab = Resources.Load ("Prefabs/Apple") as GameObject;
-		//m_itemPrefab = Resources.Load("Prefabs/Item 1") as GameObject;
 	}
 	void LevelDataPreProcess() {
 		m_levelRawData = Resources.Load ("LevelData/" + LevelRawDataFileName) as Texture2D;
@@ -84,20 +80,12 @@ public class LevelManager : MonoBehaviour {
 	void SetPlayerPosition(int x, int z) {
 		m_playerStartPosition = new Vector3 (x, 1f, z);
 	}
-	
-//	void SetItemStartPosition(int x, int z) {
-//		m_item1StartPosition = new Vector3 (x, 1f, z);
-//	}
+
 	void InstantiatePlayer() {
 		m_player = GameObject.Instantiate (m_playerPrefab, m_playerStartPosition, new Quaternion ()) as GameObject;
 		m_player.name = "Player";
 		m_player.tag = "Player";
 	}
-//	void InstantiateItems() {
-//		m_item1 = GameObject.Instantiate (m_itemPrefab, m_item1StartPosition, new Quaternion ()) as GameObject;
-//		m_item1.name = "Item1";
-//		//m_item1.tag = "Item1";
-//	}
 
 	void InstantiateCamera() {
 		GameObject camera = GameObject.Instantiate(m_cameraPrefab) as GameObject;
