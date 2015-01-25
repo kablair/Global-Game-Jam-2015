@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour {
 	public GameObject m_playerPrefab;
 	GameObject m_cameraPrefab;
 	GameObject m_applePrefab;
+	GameObject m_doorPrefab;
 	
 	public GameObject m_player;
 	Vector3 m_playerStartPosition;
@@ -44,6 +45,7 @@ public class LevelManager : MonoBehaviour {
 		m_playerPrefab = Resources.Load("Prefabs/Player") as GameObject;
 		m_cameraPrefab = Resources.Load("Prefabs/Camera") as GameObject;
 		m_applePrefab = Resources.Load ("Prefabs/Apple") as GameObject;
+		m_doorPrefab = Resources.Load ("Prefabs/Door") as GameObject;
 	}
 	void LevelDataPreProcess() {
 		m_levelRawData = Resources.Load ("LevelData/" + LevelRawDataFileName) as Texture2D;
@@ -66,21 +68,25 @@ public class LevelManager : MonoBehaviour {
 				if (color == Color.green) {
 					SetPlayerPosition(i, j);
 				}
-//				else if (color == Color.red){
-//					InstantiateApple(i,j);
-//				}
-//				else if ((color.r == 0.0f) && (color.g == 0.0f) && (color.b == 1.0f)) {
-//					//Door Horizontal Open
-//				}
-//				else if ((color.r == 100.0f/255.0f) && (color.g == 0.0f) && (color.b == 255/255.0f)) {
-//					//Door Horizontal Closed
-//				}
-//				else if ((color.r == 0.0f) && (color.g == 100.0f/255.0f) && (color.b == 255.0f/255.0f)) {
-//					//Door Vertical Open
-//				}
-//				else if ((color.r == 100.0f/255.0f) && (color.g == 100.0f/255.0f) && (color.b == 255.0f/255.0f)) {
-//					//Door Vertical Closed
-//				}
+				else if (color == Color.red){
+					InstantiateApple(i,j);
+				}
+				else if ((color.r == 0.0f) && (color.g == 0.0f) && (color.b == 1.0f)) {
+					//Door Horizontal Open
+					InstantiateDoor(i, j, true, true);
+				}
+				else if ((color.r == 100.0f/255.0f) && (color.g == 0.0f) && (color.b == 255/255.0f)) {
+					//Door Horizontal Closed
+					InstantiateDoor(i, j, true, false);
+				}
+				else if ((color.r == 0.0f) && (color.g == 100.0f/255.0f) && (color.b == 255.0f/255.0f)) {
+					//Door Vertical Open
+					InstantiateDoor(i, j, false, true);
+				}
+				else if ((color.r == 100.0f/255.0f) && (color.g == 100.0f/255.0f) && (color.b == 255.0f/255.0f)) {
+					//Door Vertical Closed
+					InstantiateDoor(i, j, false, false);
+				}
 
 				//Debug.Log(color);
 			}
@@ -114,6 +120,11 @@ public class LevelManager : MonoBehaviour {
 		m_apple.name = "Apple";
 		m_apple.tag = "Item";
 
+	}
+	void InstantiateDoor(int x, int z, bool isHorizontal, bool isOpen) {
+		GameObject m_door = GameObject.Instantiate(m_doorPrefab, new Vector3(x, 0.0f, z), new Quaternion()) as GameObject;
+		m_door.name = "Door";
+		// TODO: Setup Door
 	}
 
 	void SetWallLocation(int x, int z, bool isWall) {
