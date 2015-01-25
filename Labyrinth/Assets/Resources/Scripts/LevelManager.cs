@@ -113,6 +113,14 @@ public class LevelManager : MonoBehaviour {
 		m_apple.tag = "Item";
 
 	}
+	public void createItemAtPlayer(string name){
+		if (name.Equals("Apple")) {
+			GameObject m_apple = GameObject.Instantiate (m_applePrefab, new Vector3(m_player.transform.localPosition.x,1.0f,m_player.transform.localPosition.z+1), new Quaternion ()) as GameObject;
+						m_apple.name = "Apple";
+						m_apple.tag = "Item";
+				}
+	
+	}
 
 	void SetWallLocation(int x, int z, bool isWall) {
 		m_wallLocations[x, z] = isWall;
@@ -221,6 +229,9 @@ public class LevelManager : MonoBehaviour {
 	void InstantiateLight() {
 		GameObject lights = GameObject.Instantiate(m_lightsPrefab) as GameObject;
 		lights.name = "Lights";
+	}
+	public GameObject GetPlayer(){
+		return m_player;
 	}
 
 	void Update() {
